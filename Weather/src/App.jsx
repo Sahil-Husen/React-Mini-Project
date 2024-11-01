@@ -3,6 +3,7 @@ import cloud from "../public/cloud.png";
 import Card from "./Components/Card";
 import { IoSearchOutline } from "react-icons/io5";
 import logo from '../public/weather-app.png'
+import Loader from "./Components/Loader";
 
 function App() {
   
@@ -91,7 +92,7 @@ function App() {
         <div>
           {input && loading ? (
             <div className="flex items-center justify-center mt-5 text-2xl font-bold text-white">
-              Loading...
+              <Loader></Loader>
             </div>
           ) : data ? (
             <>
@@ -104,7 +105,7 @@ function App() {
                   alt="Cloud icon"
                   className="flex items-center justify-center h-[150px] w-auto object-cover"
                 />
-                <p className="text-3xl font-extrabold font-mono text-white hover:text-[#0a29c7] duration-200">
+                <p className="text-3xl font-extrabold font-mono text-white hover:text-[#37AFE1] duration-200">
                   {data.main.temp}&deg;C
                 </p>
                 <p className="text-white">{data.weather[0].description}</p>
