@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import cloud from "../public/cloud.png";
 import Card from "./Components/Card";
 import { IoSearchOutline } from "react-icons/io5";
+import logo from '../public/weather-app.png'
 
 function App() {
   
@@ -68,7 +69,9 @@ function App() {
 
   return (
     <div className="h-screen bg-[#a3d3f7] flex flex-col items-center justify-center">
+      
       <div className="bg-[#3e6b9c] p-5 min-h-96 rounded-lg m-auto w-[30vw]">
+        <h1 className="text-center text-3xl mb-2 text-white font-extrabold font-mono ">Weather App</h1>
         <form
           onSubmit={handleSubmit}
           className="mt-0 flex items-center justify-center rounded-full p-1 bg-white"
@@ -78,9 +81,9 @@ function App() {
             onChange={(e) => setInput(e.target.value)}
             placeholder="Search City..."
             type="text"
-            className="w-[100%] rounded-full border-none outline-none p-1 font-mono font-bold from-neutral-500 text-2xl"
+            className="w-[100%] rounded-full border-none outline-none p-1 font-regular  from-neutral-500 text-2xl"
           />
-          <button className="rounded-full h-fit p-2 hover:bg-blue-400 transition-all duration-200">
+          <button className="rounded-full h-fit p-2 bg-blue-400 transition-all duration-200">
             <IoSearchOutline />
           </button>
         </form>
@@ -113,19 +116,17 @@ function App() {
           ) : (
             // Default UI
             <div className="flex flex-col items-center justify-center mt-1">
-              <h1 className="text-4xl font-bold text-white">Welcome</h1>
+               
               <img
-                src={cloud}
+                src={logo}
                 alt="Cloud icon"
-                className="h-[150px] w-auto object-cover"
+                className="h-[150px] w-auto object-cover mt-10"
               />
-              <p className="text-3xl font-extrabold font-mono text-white mt-2">
-                25&deg;C
+              <p className="text-3xl font-extrabold font-medium text-white mt-2">
+                <span className="text-5xl">25</span>&deg;C
               </p>
-              <p className="text-white">Overcast Cloud</p>
-              <div>
-                <Card />
-              </div>
+              <p className="text-white">Lucknow</p>
+             
             </div>
           )}
         </div>
